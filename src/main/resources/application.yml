@@ -1,0 +1,31 @@
+server:
+  port: 8580
+spring:
+  application:
+    name: qr-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/qr_db?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+    
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show_sql: true
+        format_sql: true
+        
+qr:
+ height: 400
+ width: 400
+ store:
+  location: D:/ETF_PRO/qr_store_location/
+ extension: .png
